@@ -1,0 +1,50 @@
+{
+	"parser": "@babel/eslint-parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"sourceType": "module"
+	},
+	"env": {
+		"es6": true,
+		"browser": true,
+		"node": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:eslint-plugin-react-hooks/recommended",
+		"plugin:react/recommended",
+		"plugin:eslint-plugin-import/errors",
+		"plugin:eslint-plugin-import/warnings"
+	],
+	"plugins": [
+		"react"
+	],
+	"rules": {
+		"no-unused-vars": "error",
+		"linebreak-style": 0,
+		"camelcase": "error",
+		"eqeqeq": ["error", "always"],
+		"quotes": ["error", "single"],
+		"jsx-quotes": ["error", "prefer-double"],
+		"arrow-parens": ["error", "as-needed"],
+		"arrow-spacing": "error",
+		"block-spacing": ["error", "never"],
+		"brace-style": ["error", "1tbs"],
+		"comma-dangle": ["error", "never"],
+		"eol-last": "error",
+		"key-spacing": ["error", { "beforeColon": false }],
+		"no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
+		"no-multi-spaces": "error",
+		"no-multiple-empty-lines": ["error", {"max": 2}],
+		"no-trailing-spaces": ["error", { "ignoreComments": true }],
+		"semi": ["error", "never"],
+		"no-shadow": "error",
+		"require-jsdoc": "off",
+		"react/prop-types": 0,
+		"no-var": "error",
+		"indent": ["error", "tab"],
+		"no-duplicate-imports": "error"
+	}
+}
