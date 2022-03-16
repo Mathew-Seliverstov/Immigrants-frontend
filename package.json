@@ -15,7 +15,12 @@
     "start": "cross-env NODE_ENV=development SERVE=true webpack-dev-server --mode development --open",
     "build:dev": "cross-env NODE_ENV=development webpack --mode development",
     "build:prod": "cross-env NODE_ENV=production webpack --mode production",
-    "clean": "rd /s /q dist"
+    "clean": "rd /s /q dist",
+		"release:major": "standard-version --release-as major",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release": "standard-version",
+    "push-dev": "git push --follow-tags origin develop"
   },
   "eslintConfig": {
     "extends": [
@@ -60,6 +65,7 @@
     "mini-css-extract-plugin": "^2.6.0",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "react-refresh": "^0.11.0",
+    "standard-version": "^9.3.2",
     "style-loader": "^3.3.1",
     "terser-webpack-plugin": "^5.3.1",
     "webpack": "^5.70.0",
