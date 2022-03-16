@@ -1,6 +1,6 @@
 {
   "name": "immigrants-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
@@ -16,7 +16,7 @@
     "build:dev": "cross-env NODE_ENV=development webpack --mode development",
     "build:prod": "cross-env NODE_ENV=production webpack --mode production",
     "clean": "rd /s /q dist",
-		"release:major": "standard-version --release-as major",
+    "release:major": "standard-version --release-as major",
     "release:minor": "standard-version --release-as minor",
     "release:patch": "standard-version --release-as patch",
     "release": "standard-version",
