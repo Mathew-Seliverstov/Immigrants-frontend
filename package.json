@@ -1,6 +1,6 @@
 {
   "name": "immigrants-app",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
@@ -15,7 +15,12 @@
     "start": "cross-env NODE_ENV=development SERVE=true webpack-dev-server --mode development --open",
     "build:dev": "cross-env NODE_ENV=development webpack --mode development",
     "build:prod": "cross-env NODE_ENV=production webpack --mode production",
-    "clean": "rd /s /q dist"
+    "clean": "rd /s /q dist",
+    "release:major": "standard-version --release-as major",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release": "standard-version",
+    "push-dev": "git push --follow-tags origin develop"
   },
   "eslintConfig": {
     "extends": [
@@ -58,8 +63,11 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.0",
+    "node-sass": "^7.0.1",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "react-refresh": "^0.11.0",
+    "sass-loader": "^12.6.0",
+    "standard-version": "^9.3.2",
     "style-loader": "^3.3.1",
     "terser-webpack-plugin": "^5.3.1",
     "webpack": "^5.70.0",
