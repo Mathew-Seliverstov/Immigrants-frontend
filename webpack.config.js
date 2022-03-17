@@ -6,6 +6,7 @@ const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plug
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
 
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
@@ -40,6 +41,10 @@ const getPlugins = () => {
 
 	if (isDev) {
 		plugins.push(new ESLintPlugin())
+	}
+
+	if (isProd) {
+		plugins.push(new BundleAnalyzerPlugin())
 	}
 
 	if (process.env.SERVE) {
