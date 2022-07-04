@@ -67,15 +67,15 @@
 
 * `-- --release-as <major or minor or patch>` - обновит указанную версию. Пример:
 
-			npm run release -- --release-as minor
+		npm run release -- --release-as minor
 
-			// 1.1.1 --> 1.2.0
+		// 1.1.1 --> 1.2.0
 
 * `-- --prerelease <name>` - обновит Pre-release версию. Пример:
 
-			npm run release -- --prerelease beta
+		npm run release -- --prerelease beta
 
-			// 1.1.1 --> 1.1.1-beta.0
+		// 1.1.1 --> 1.1.1-beta.0
 
 #### `npm run push-dev`
 Для пуша коммита в github репозиторий - запустите:
