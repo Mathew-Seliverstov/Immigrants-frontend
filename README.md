@@ -1,96 +1,95 @@
 # **Welcome to Immigrants project!**
 
-Добро пожаловать в проект "Immigrants"! Идея "Immigrants" - помочь людям эмигрировавшим из своих стран. Наша цель - создать комьюнити иммигрантов, чтобы помочь им освоиться на новом месте, мы хотим дать возможность организовывать мероприятия, помогать друг другу, искать знакомых, общаться, предостовлять финансовую помощь.
-Далее будет подробно описано как работать с проектом.
+Welcome to the "Immigrants" project! The idea of "Immigrants" is to help people who have emigrated from their countries. Our goal is to create a community of immigrants to help them settle in a new place, we want to give them the opportunity to organize events, help each other, find friends, communicate, and provide financial assistance. The following will describe in detail how to work with the project.
 
 # **Docs**
 
 ### **Scripts**
 
 #### `npm run start`
-Для запуска проекта в режиме разработки с включеным hot-reload - запустите:
+To run the project in development mode with hot-reload enabled - run:
 `npm run start`
 
-Страница автоматически откроется по адресу [http://localhost:4200](http://localhost:4200)
+The page will automatically open at [http://localhost:4200](http://localhost:4200)
 
-При включеном hot-reload'е сраница будет обновляться автоматически, сразу как вы примените изменения в файле.
-Вы также можете просматривать ошибки linter'а в консоли.
+With hot-reload enabled, the page will update automatically as soon as you apply changes to the file.
+You can also view linter errors in the console.
 
 #### `npm run build:dev`
-Для сборки проекта в режиме разработки - запустите:
+To build the project in development mode - run:
 `npm run build:dev`
 
-После сборки в корне проекта появится папка `dist`, в которой будут лежать измененные bundle'ы
-В отличии от production сборки, при dev сборке файлы не минифицируются, но их названия меняются на hash'и
+After the build, the `dist` folder will appear in the root of the project, in which the changed bundles will be located
+Unlike production builds, dev builds don't minify files, but change their names to hash's
 
 #### `npm run build:prod`
-Для сборки проекта в production режиме - запустите:
+To build the project in production mode - run:
 `npm run build:prod`
 
-После сборки в корне проекта появится папка `dist`, в которой будут лежать измененные bundle'ы
-При production сборке все файлы .js, .jsx, .css, .json, .png ... минифицируются для уменьшения размеров файлов
+After the build, the `dist` folder will appear at the root of the project, in which the changed bundles will be located
+On production build, all .js, .jsx, .css, .json, .png ... files are minified to reduce file sizes
 
 #### `npm run clean`
-Для очистки проекта - запустите:
+To clean up the project - run:
 `npm run clean`
 
-Этот script удаляет папку `dist` из корня проекта.
+This script removes the `dist` folder from the project root.
 
 #### **Semver Scripts**
-Для исполнения этих команд, вы сначала должны выполнить коммит, используя `git add .` `git commit -m ""`. Подробнее читайте в [этом](#versioning) блоке.
+To run these commands, you must first commit using `git add .` `git commit -m ""`. Read more in [this](#versioning) block.
 
 #### `npm run release:major`
-Для обновления "Major" версии - запустите:
+To update "Major" version - run:
 `npm run release:major`
 
-Эта команда подготовит коммит, обновит версию приложения и сгенерирует `CHANGELOG.md` файл. Для пуша изменений используйте команду [`push-dev`](#npm-run-push-dev)
+This command will prepare a commit, update the application version, and generate a `CHANGELOG.md` file. To push changes, use the command [`push-dev`](#npm-run-push-dev)
 
 #### `npm run release:minor`
-Для обновления "Minor" версии - запустите:
+To update "Minor" version - run:
 `npm run release:minor`
 
-Эта команда подготовит коммит, обновит версию приложения и сгенерирует `CHANGELOG.md` файл. Для пуша изменений используйте команду [`push-dev`](#npm-run-push-dev)
+This command will prepare a commit, update the application version, and generate a `CHANGELOG.md` file. To push changes, use the command [`push-dev`](#npm-run-push-dev)
 
 #### `npm run release:patch`
-Для обновления "Patch" версии - запустите:
+To update "Patch" version - run:
 `npm run release:patch`
 
-Эта команда подготовит коммит, обновит версию приложения и сгенерирует `CHANGELOG.md` файл. Для пуша изменений используйте команду [`push-dev`](#npm-run-push-dev)
+This command will prepare a commit, update the application version, and generate a `CHANGELOG.md` file. To push changes, use the command [`push-dev`](#npm-run-push-dev)
 
 #### `npm run release`
-Для обновления версии приложения - запустите:
+To update the application version - run:
 `npm run release`
 
-Эта команда обновит версию и создаст `CHANGELOG.md` файл, в зависимости от типа коммита. При типе "feat" - обновит "Minor" версию, а при всех остальных - "Patch" версию. Используйте эту команду в случае использование типа коммита, отличного от "fix" и "feat"
+This command will update the version and create a `CHANGELOG.md` file, depending on the commit type. If the type is "feat" - will update the "Minor" version, and if all the rest - the "Patch" version. Use this command when using a commit type other than "fix" and "feat"
 
-Вы также можете использовать флаги:
+You can also use flags:
 
-* `-- --release-as <major or minor or patch>` - обновит указанную версию. Пример:
+* `-- --release-as <major or minor or patch>` - will update the specified version. Example:
 
-			npm run release -- --release-as minor
+		npm run release -- --release-as minor
 
-			// 1.1.1 --> 1.2.0
+		// 1.1.1 --> 1.2.0
 
-* `-- --prerelease <name>` - обновит Pre-release версию. Пример:
+* `-- --prerelease <name>` - will update the Pre-release version. Example:
 
-			npm run release -- --prerelease beta
+		npm run release -- --prerelease beta
 
-			// 1.1.1 --> 1.1.1-beta.0
+		// 1.1.1 --> 1.1.1-beta.0
 
 #### `npm run push-dev`
-Для пуша коммита в github репозиторий - запустите:
+To push a commit to a github repository, run:
 `npm run push-dev`
 
-Эта команда зальет изменения в "develop" ветку в git.
+This command will push the changes to the "develop" branch in git.
 
 ### Code style guide
 
-В этом проекте действуют правила стиля, в котором должен быть написан код. Так это совместный проект - стиль каждого программиста может отличаться, что негативно сказывается на проекте.
+This project has style rules in which the code must be written. So this is a joint project - the style of each programmer may be different, which negatively affects the project.
 
-Основные правила:
-* Не используйте точку с запятой (";") в конце выражений. Да, в очень редких случаях это может вызвать ошибку, но 	без ";" код выглядит красивее + остальные настройки linter'а должны исключить возможность допустить ошибки, 			которые потенциально могут вызвать ошибку в связи с отсутствием ";"
+General rules:
+* Do not use semicolons (";") at the end of expressions. Yes, in very rare cases it can cause an error, but without the ";" the code looks prettier + the rest of the linter settings should exclude the possibility of making mistakes that could potentially cause an error due to the absence of ";"
 
-	Пример хорошего кода &#128077;
+	Good code example &#128077;
 
 		const variable = 'test'
 
@@ -100,7 +99,7 @@
 
 		console.log(repeat(5))
 
-	Пример плохого кода &#128078;
+	Bad code example &#128078;
 
 			const variable = 'test';
 
@@ -110,9 +109,9 @@
 
 			console.log(repeat(5));
 
-* Используйте camelCase (Верблюжий регистр) для наименования переменных, функций и т.д. Напомню, что camelCase подразумевает, что вы начинаете писать в нижнем регистре, но каждое новое слово начинаете с заглавной буквы. Пример: `testNameOfCamelCaseVariable`, `someFunction`, `variable`. Однако есть ряд исключений: названия классов и компонентов мы начинаем с заглавной буквы, пример: `TestClass`, `ModalComponent`
+* Use camelCase to name variables, functions, and so on. Let me remind you that camelCase means that you start writing in lowercase, but start each new word with a capital letter. Example: `testNameOfCamelCaseVariable`, `someFunction`, `variable`. However, there are a number of exceptions: we start the names of classes and components with a capital letter, for example: `TestClass`, `ModalComponent`
 
-* Используйте только строгие сравнения: `===` и  `!==`.
+* Use only strict comparisons: `===` и  `!==`.
 
 		// bad
 		if (a == b || b != c) {...}
@@ -120,7 +119,7 @@
 		// good
 		if (a === b || b !== c) {...}
 
-* Используйте одинарные кавычки ('') везде, кроме html тегов и jsx, внутри тега используйте двойные кавычки ("")
+* Use single quotes ('') everywhere except for html and jsx tags, use double quotes inside the tag ("")
 
 		// bad
 		const arr = ["test", "test", "test]
@@ -130,19 +129,19 @@
 		const arr = ['test', 'test', 'test']
 		<div class="test"></div>
 
-* Используйте только табуляцию для отступов, не используйте пробелы. Размер интервала табуляции: 2
+* Use only tabs for indentation, do not use spaces. Tab interval size: 2
 
-* Всегда добавляйте пустую строку в конце файла
+* Always add an empty line at the end of a file
 
-* _Полный список правил вы можете посмотреть в файле `.eslintrc`_
+* _You can see the full list of rules in the file `.eslintrc`_
 
-> Не соблюдение этих правил может привести к ошибкам, если вы получили ошибку от linter'а - скопируйте ее название и найдите это правило на [сайте]('https://eslint.org/docs/rules/'), прочитайте за что оно отвечает, после чего - исправьте.
+> Failure to follow these rules can lead to errors, if you get an error from linter - copy its name and find this rule on the [website]('https://eslint.org/docs/rules/'), read what it is, and correct it.
 
 ### Versioning
 
-Версионирование - важная часть любого проекта, с его помощью можно легко понять какие изменения произошли в проекте и быстро обновиться на новую версию или откатитья на старую, но стабильную.
+Versioning is an important part of any project, with its help you can easily understand what changes have taken place in the project and quickly upgrade to a new version or rollback to an old, but stable one.
 
-В этом проекте мы будем использовать "семантическое версионирование", также известное как "SemVer". Что же оно из себя представляет?
+In this project, we will use "semantic versioning", also known as "SemVer". What does it represent?
 
 		1.2.3-beta.1
 		| | |  |________ Pre-release
@@ -150,94 +149,95 @@
 		| |_____________ Minor
 		|_______________ Major
 
-Семантическая версия состоит из четырех чатсей: **Major**, **Minor**, **Patch** и **Pre-release**.
-Каждая из них обозначает определенный тип изменений, которые были введены в новой версии. Однако обязательны только первые три части: "Major", "Minor" и "Patch". "Pre-release" мы будем использовать только когда проект будет почти готов к выпуску первой версии.
+The semantic version consists of four parts: **Major**, **Minor**, **Patch** and **Pre-release**.
+Each of them denotes a specific type of change that has been introduced in the new version. However, only the first three parts are required: "Major", "Minor" and "Patch". "Pre-release" we will use only when the project is almost ready for the release of the first version.
 
-* **Major** - увеличивается, когда проводятся большие изменения. В данном случае, так как мы говорим про сайт, когда происходят такие изменения, которые могут нарушить работу старых версий или добавляют новую бизнес логику. Например: вы добавили на сайт боковое меню, с помощью которого теперь можно написать пост, но в старой версии приложения такой фуекции не было. Тут очень сложно объяснить, когда нужно повышать "Major" версию, так это легче объяснить на примере api - "Major" версия повышается, когда api меняется обратно несовместимым образом, например вы добавили функцию активации аккаунта в новой версии. Но, все таки, мы здесь не api рассматриваем, поэтому я буду делать пометки на задачах, которые будут менять "Major" версию.
+* **Major** - Increases when major changes are made. In this case, since we are talking about the site when such changes occur they may break old versions or add new business logic. For example, you added a side menu to the site, with which you can now write a post, but in the old version of the application, there was no such function. It's very difficult to explain when to upgrade the "Major" version, so it's easier to explain with api example - "Major" version is upgraded when the api changes back in an incompatible way, for example, you added the account activation function in the new version. But, all the same, we are not considering api here, so I will make notes on tasks that will change the "Major" version.
 
-* **Minor** - увеличивается, когда проводятся незначительные изменения, добавляется новая функциональность, при этом они не нарушают обратную совместимость. Пример: вы добавили на сайт кнопку для обратной связи - это не нарушило работу приложения для старых версий, а просто добавило новую функцию. После повышения "Major" версии необходимо сбрасывать "Minor" версию, то есть после версии 3.23 идет версия 4.0, а не 4.24.
+* **Minor** - incremented when minor changes are made, new functionality is added, and they do not break backward compatibility. Example: you added a feedback button to the site - this did not break the application for older versions, but simply added a new feature. After upgrading the "Major" version, you must reset the "Minor" version, that is, after version 3.23 comes version 4.0, not 4.24.
 
-* **Patch** - увеличивается при исправлении багов, рефакторинге и прочих изменений, которые ничего не ломают, но и не добавляют новых функций. Пример: вы исправили ошибку, когда при нажатии на кнопку "Зарегистрироваться" не открывалась страница регистрации. Или вы изменили цвет кнопки, модального окна. При увеличении "Major" или "Minor" необходимо сбрасывать "Patch" в 0.
+* **Patch** - increases when fixing bugs, refactorings, and other changes that do not break anything, but do not add new features. Example: you fixed a bug where clicking on the "Register" button did not open the registration page. Or you changed the color of a button, a modal window. When increasing "Major" or "Minor", you must reset "Patch" to 0.
 
-* **Pre-release** - необязательный, разделенный точками список, отделенный от трех номеров версии знаком минус. Например: "1.1.0-beta.2". Используется вместо тегов, чтобы “помечать” определенные вехи в разработке. Обычно это “alpha”, “beta”, “release candidate” (“rc”). Где “alpha” - младшая версия, а “release candidate” - старшая, после нее версию отдают пользователю, то есть вносят изменения непосредственно на сайт.
+* **Pre-release** is an optional dot-separated list separated from the three version numbers by a minus sign. For example: "1.1.0-beta.2". Used instead of tags to "mark" certain milestones in development. Usually, it is “alpha”, “beta”, or “release candidate” (“rc”). Where “alpha” is a minor version, and “release candidate” is a higher version, after the version is given to the user, that is, changes are made directly to the site.
 
-Но как же обновить версию, когда внес изменения?
+But how do you update the version when you made changes?
 
-Вообще, версия проекта находится в поле "version" в `package.json` файле. Ее можно изменять вручную, но при таком подходе будет сложно вести `CHANGELOG.md`, так как придется вручную делать это. Также при таком подходе легко забыть, что нужно обновить версию, что может вызвать проблемы. Поэтому в этом проекте мы будем использовать библиотеку "standard-version" для управления версиями.
+Generally, the version of the project is in the "version" field in the `package.json` file. It can be changed manually, but with this approach, it will be difficult to maintain `CHANGELOG.md`, since you have to do it manually. Also, with this approach, it is easy to forget that you need to update the version, which can cause problems. Therefore, in this project, we will use the "standard-version" library for version control.
 
-Когда вы закончили изменения, вам необходимо внести их в git и залить в этот github репозиторий. Обычно это делается так:
+Once you've completed your changes, you'll need to commit them to git and push them to this github repository. This is usually done like this:
 
-		git add .	// добавляет все файлы в область слежения git
+		git add .	// adds all files to the git tracking area
 
-		git commit -m "some commit"  // делает коммит
+		git commit -m "some commit"  // makes a commit
 
-		git push -u origin develop  // вносит изменения в develop ветку в github репозитории.
+		git push -u origin develop  // push changes to the develop branch in the github repository.
 
-Но, так как мы используем "standard-version" библиотеку, вам необходимо будет использовать скрипты, изучить которые вы можете [здесь](#semver-scripts), делается это так:
+But, since we are using the "standard-version" library, you will need to use scripts, which you can learn [here](#semver-scripts), it's done like this:
 
 		git add .
 
-		git commit -m "some commit"
+		git commit -m "feat: some commit"
 
-		npm run release:minor // увеличивает minor версию
+		npm run release:minor // increases the minor version
 
-		npm run push-dev // публикует коммит в github репозитории
+		npm run push-dev // publishes a commit to a github repository
 
 
-Отлично! Теперь все изменения залиты в git, версия увеличена, а в `CHANGELOG.md` сгенерировалась запись об этой версии. Однако это не все, что вам необходимо знать о версионировании, чтобы другие разработчики и вы могли легко разбираться в коммитах, необходимо придерживаться соглашения о названии коммитов. Об этом в следующем блоке.
+Excellent! Now, all changes are uploaded to git, the version is increased, and a record about this version is generated in `CHANGELOG.md`. However, this is not all you need to know about versioning, so that other developers and you can easily understand commits, you must adhere to the commit naming convention. More on that in the next block.
 
 #### Conventional Commits
 
-Правильно называть коммиты - очень важно. Это позволяет сразу понять какие изменения были внесены и на что они повлияли. Существует соглашение о коммитах, которого вы должны придерживаться.
+Naming commits correctly is very important. This allows you to immediately understand what changes were made and what they affected. There is a commitment convention that you must adhere to.
 
-Сообщения коммитов должны быть следующей структуры:
+Commit messages should have the following structure:
 
 		<type>: <description>
 
 		[optional body]
 
 
-Вот список типов коммитов, которые вы должны использовать в начале  названия коммита:
+Here is a list of the types of commits you should use at the beginning of a commit name:
 
-* **feat** - должен использоваться при добавлении нового функционала. (feat - от англ. "feature" - фича)
+* **feat** - should be used when adding new functionality.
 
-* **fix** - должен использоваться при исправлении багов или небольших изменений, например: изменить цвет кнопки. Сюда относятся все "Patch" изменения.
+* **fix** - should be used when fixing bugs or small changes, for example: changing the color of a button. This includes all "Patch" changes.
 
-* **docs** - должен использоваться при изменении документации.
+* **docs** - should be used when changing documentation.
 
-* **style** - должен использоваться при изменениях не влияющих на код (пробелы, табуляция, форматирование, etc).
+* **style** - should be used for changes that do not affect the code (spaces, tabs, formatting, etc).
 
-* **refactor** - должен использоваться при изменениях не связанных с исправлением багов и добавлением фич. Пример:
+* **refactor** - should be used for changes not related to fixing bugs and adding features. Example:
 
-			// was
-			<Component
-				onClick={function(arg1, arg2) {
-					console.log(arg1 +  arg2)
-				}}
-			>
-			</Component>
-			// became
-			<Component
-				onClick={(arg1, arg2) => console.log(arg1 + arg2)}
-			>
-			</Component>
+		// was
+		<Component
+			onClick={function(arg1, arg2) {
+				console.log(arg1 +  arg2)
+			}}
+		>
+		</Component>
+
+		// became
+		<Component
+			onClick={(arg1, arg2) => console.log(arg1 + arg2)}
+		>
+		</Component>
 
 
-* **perf** - должен использоваться при изменениях связанных с производительностью
+* **perf** - should be used for performance related changes
 
-* **chore** - изменения связанные с обновлением библиотек, поддержкой кода, etc.
+* **chore** - changes related to updating libraries, code support, etc.
 
-Чтобы задать описание коммиту используется флаг -m:
+The -m flag is used to give a description to a commit:
 
 		git commit -m "type: description" -m "body"
 
-Первый флаг задает короткое описание коммита, а второй флаг задает полное описание коммита.
+The first flag specifies a short description of the commit, and the second flag specifies the full description of the commit.
 
 
-Пример хорошего коммита &#128077;
+Good commit example &#128077;
 
 		git commit -m "feat: Add testFunction to index.js file" -m "This function take two arguments, adds them and outputs the sum"
 
-Пример плохого коммита &#128078;
+Bad commit example &#128078;
 
 		git commit -m "something happens"
