@@ -1,0 +1,9 @@
+.animation {
+	width: 22px;
+	fill: #aaa;
+	transition: transform 0.1s ease;
+
+	&:active {
+		transform: rotate(60deg);
+	}
+}

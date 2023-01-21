@@ -1,0 +1,176 @@
+@import '../../styles/variable.scss';
+
+header {
+	height: 60px;
+	background: #fff;
+	display: flex;
+	justify-content: space-between;
+	padding: 0.5rem 5%;
+	box-shadow: 6px 0 12px #00000020;
+}
+
+.burgerMenu {
+	display: none;
+	padding: 5px;
+	margin-right: 10px;
+}
+
+img {
+	height: 60%;
+	margin-right: 20px;
+	margin-left: 10px;
+}
+
+.navMenu {
+	height: 100%;
+	display: flex;
+	align-items: center;
+
+	.navLink {
+		height: auto;
+		color: $black;
+		font-size: 1.1rem;
+		font-weight: 700;
+		text-decoration: none;
+		padding: 0.5rem 1rem;
+		cursor: pointer;
+
+		&.active {
+			border: none;
+			color: #3d87ff;
+			font-weight: 800;
+		}
+
+		&:hover {
+			transition: all 0.2s ease-out;
+			transform: translateY(5px);
+			border: none;
+		}
+	}
+}
+
+@mixin nav-btn {
+	width: 100%;
+	border-radius: 10px;
+	padding: 8px 25px;
+	text-align: center;
+	border: 2px solid #0273F9;
+	outline: none;
+	cursor: pointer;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+.btnContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	.navBtn {
+		@include nav-btn;
+		background: #0273F9;
+		color: #fff;
+	}
+
+	.navBtnOutline {
+		@include nav-btn;
+		background: #fff;
+		color: #0273F9;
+		margin-right: 30px;
+	}
+
+	.navBtnOutline:hover {
+		color: #fff;
+		background: #0273F9;
+	}
+	.navBtn:hover {
+		background: $primary-hover;
+		border-color: $primary-hover;
+	}
+	.navBtnOutline:hover+.navBtn {
+		background: #fff;
+		color: #0273F9;
+	}
+}
+
+.unselectable {
+	-webkit-touch-callout: none;
+	/* iOS Safari */
+	-webkit-user-select: none;
+	/* Chrome/Safari/Opera */
+	-khtml-user-select: none;
+	/* Konqueror */
+	-moz-user-select: none;
+	/* Firefox */
+	-ms-user-select: none;
+	/* Internet Explorer/Edge */
+	user-select: none;
+}
+
+.navMenuMobile {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: calc(100vh - 60px);
+	background: $light;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	z-index: 99;
+	padding: 80px 30px;
+
+	.navLink {
+		margin-bottom: 60px;
+		font-size: 28px;
+		font-weight: 700;
+		color: $black;
+		text-decoration: none;
+		width: 100%;
+		text-align: center;
+	}
+
+	&.open {
+		display: flex;
+	}
+
+	.navBtn {
+		@include nav-btn;
+		width: 80%;
+		margin-right: 0;
+		color: #fff;
+		background: $primary;
+	}
+
+	.navBtnOutline {
+		@include nav-btn;
+		background: transparent;
+		margin-bottom: 20px;
+		color: $primary;
+		width: 80%;
+		margin-right: 0;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.navMenu {
+		display: none;
+	}
+
+	.btnContainer {
+		display: none;
+	}
+
+	.burgerMenu {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: transform 0.3s ease;
+		font-size: 2.4rem;
+		cursor: pointer;
+
+		&:active {
+			transform: rotate(-60deg);
+		}
+	}
+}

@@ -1,0 +1,81 @@
+// colors
+$dark: rgb(29, 29, 29);
+$bg: #EBEBEB;
+$light: #F6F6F6;
+$primary: #0273F9;
+$primary-hover: $primary - 25;
+$primary-active: $primary - 50;
+$secondary: #9B51E0;
+$secondary-hover: #C77DFF;
+$secondary-active: #762CBB;
+$black: #0F0F0F;
+$input-background: #F4F4F4;
+$input-background-dark: #EFEFEF;
+$input-placeholder-dark: #BABABA;
+$input-placeholder: #C9C9C9;
+$success: #19CA20;
+// Shadows
+$sidebar-shadow: 6px 0px 12px #00000005;
+$card-shadow: -2px 2px 8px #00000001;
+$card-shadow-hover: 0px 4px 20px #00000015;
+
+// spacing
+$spacing-md: 16px;
+$spacing-lg: 32px;
+
+// border radius
+$borderRadius: 12px;
+
+// header height
+$headerHeight: 100px;
+
+@mixin h1 {
+	font-size: 2.5rem;
+	font-weight: 500;
+	line-height: 2.75rem;
+}
+
+@mixin h2 {
+	font-size: 2rem;
+	font-weight: 500;
+	line-height: 2.25rem;
+}
+
+@mixin h3 {
+	font-size: 1.5rem;
+	font-weight: 500;
+	line-height: 28px;
+}
+
+@mixin h4 {
+	font-size: 1.25rem;
+	font-weight: 500;
+	line-height: 1.5rem;
+}
+
+@mixin h5 {
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.25rem;
+}
+
+@mixin h6 {
+	font-size: 0.75rem;
+	font-weight: 500;
+	line-height: 1rem;
+}
+
+@mixin body {
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.25rem;
+}
+
+@mixin breakpoint($point) {
+  @if $point == md {
+    // 768px
+    @media (min-width: 48em) {
+      @content;
+      }
+  }
+}

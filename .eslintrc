@@ -44,7 +44,35 @@
 		"require-jsdoc": "off",
 		"react/prop-types": 0,
 		"no-var": "error",
-		"indent": ["error", "tab"],
+		"indent": ["error", "tab", {"SwitchCase": 1}],
 		"no-duplicate-imports": "error"
-	}
+	},
+	"settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "fragment": "Fragment",
+      "version": "detect"
+    },
+    "propWrapperFunctions": [
+        "forbidExtraProps",
+        {"property": "freeze", "object": "Object"},
+        {"property": "myFavoriteWrapper"},
+        {"property": "forbidExtraProps", "exact": true}
+    ],
+    "componentWrapperFunctions": [
+        "observer",
+        {"property": "styled"},
+        {"property": "observer", "object": "Mobx"},
+        {"property": "observer", "object": "<pragma>"}
+    ],
+    "formComponents": [
+      "CustomForm",
+      {"name": "Form", "formAttribute": "endpoint"}
+    ],
+    "linkComponents": [
+      "Hyperlink",
+      {"name": "Link", "linkAttribute": "to"}
+    ]
+  }
 }

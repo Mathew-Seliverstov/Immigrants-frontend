@@ -1,0 +1,94 @@
+@import '../../styles/variable.scss';
+
+.sliderContainer {
+	width: 98%;
+	height: 280px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin-top: 20px;
+
+	.slider {
+		width: 100%;
+		height: 100%;
+		border-radius: 10px;
+		display: flex;
+		flex-direction: row;
+		overflow-x: scroll;
+		padding: 10px;
+		scrollbar-width: none;
+		scroll-behavior: smooth;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+
+	.arrow {
+		background: #fff;
+		opacity: 0.5;
+		border-radius: 100%;
+		margin: 5px;
+		position: absolute;
+		cursor: pointer;
+		z-index: 10;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+.card {
+	width: 280px;
+	min-width: 280px;
+	height: 252px;
+	background: $light;
+	display: inline-block;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	margin-right: 40px;
+	border-radius: 10px;
+	padding: 0;
+	cursor: pointer;
+	box-shadow: $card-shadow;
+	transition: all 0.3s ease;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&:hover {
+		background: #fff;
+		box-shadow: $card-shadow-hover;
+		transform: translateY(-5px);
+	}
+
+	.cardImg {
+		width: 100%;
+		height: 80%;
+		border-radius: 10px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.title {
+		width: 100%;
+		height: 20%;
+		padding: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		p {
+			@include h5;
+			text-align: center;
+			font-weight: 700;
+			word-break: break-word;
+		}
+	}
+}

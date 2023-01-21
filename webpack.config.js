@@ -60,7 +60,8 @@ module.exports = {
 	entry: ['@babel/polyfill', './index.js'],
 	output: {
 		filename: '[contenthash].js',
-		path: path.resolve(__dirname, 'dist')
+		path: path.resolve(__dirname, 'dist'),
+		publicPath: '/'
 	},
 	resolve: {
 		extensions: ['.js', '.json', '.jsx', '.css'],
@@ -71,7 +72,8 @@ module.exports = {
 	optimization: optimization(),
 	devServer: {
 		port: 4200,
-		hot: isDev
+		hot: isDev,
+		historyApiFallback: true
 	},
 	devtool: isDev ? 'source-map' : false,
 	plugins: getPlugins(),
@@ -82,8 +84,12 @@ module.exports = {
 				use: [MiniCssExtractPlugin.loader, 'css-loader']
 			},
 			{
-				test: /\.(png|jpg|jpeg|jpe|svg|gif|webp)$/,
+				test: /\.(png|jpg|jpeg|jpe|gif|webp|ico)$/,
 				type: isProd ? 'asset' : 'asset/resource'
+			},
+			{
+				test: /\.svg$/,
+				use: ['@svgr/webpack']
 			},
 			{
 				test: /\.(ttf|woff|woff2|eot)$/,

@@ -1,0 +1,125 @@
+@import '../../styles/variable.scss';
+
+.form {
+	width: 30%;
+	height: calc(100vh - 60px);
+	background: $light;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 25px 20px 15px;
+	box-shadow: $sidebar-shadow;
+	transition: width 0.4s ease;
+
+	h2 {
+		margin-bottom: 25px;
+	}
+
+	a {
+		font-weight: bold;
+		text-decoration: underline;
+		text-decoration-color: $primary;
+		text-underline-offset: 1px;
+	}
+
+	.errorMsg {
+		width: 100%;
+		word-break: keep-all;
+		text-align: center;
+		color: red;
+		@include h5;
+	}
+
+	.buttonsContainer {
+		width: 65%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-top: 10px;
+	}
+}
+
+// ADAPTIVE
+
+@media (max-width: 1500px) {
+	.form {
+		width: 25%;
+	}
+}
+
+@media (max-width: 1300px) {
+	.form {
+		width: 35%;
+	}
+}
+
+@media (max-width: 1150px) {
+	.form {
+		width: 40%;
+
+		.buttonsContainer {
+			width: 70%;
+		}
+	}
+}
+
+@media (max-width: 1050px) {
+	.form {
+		width: 45%;
+	}
+}
+
+@media (max-width: 950px) {
+	.form {
+		width: 50%;
+		height: auto;
+		border-radius: 10px;
+		position: relative;
+		padding: 15px 20px;
+
+		.buttonsContainer {
+			width: 70%;
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	.form {
+		width: 60%;
+		height: auto;
+		border-radius: 10px;
+		position: relative;
+		padding: 15px 20px;
+
+		.buttonsContainer {
+			width: 70%;
+		}
+	}
+}
+
+@media (max-width: 680px) {
+	.form {
+		width: 70%;
+		height: auto;
+		border-radius: 10px;
+		position: relative;
+		padding: 15px 20px;
+
+		.buttonsContainer {
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: 580px) {
+	.form {
+		width: 95%;
+		height: auto;
+		border-radius: 10px;
+		position: relative;
+		padding: 15px 20px;
+	}
+}
